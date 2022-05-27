@@ -5,24 +5,8 @@ object ListOperations {
    
   def main(args:Array[String]) {
     
-    /*val lst =List(1, 1, 2, 3, 5, 8)
-    print(lst.last)
-    print(lst.head)
-    print(lst.tail)
-    print(lst(lst.length-1))
-    print(lst(1))
-    println(lst.reverse)
     
-    var list1 : List[Int]= List()
-    var lst_a=lst
-     while(lst_a.length>0) {
-       var ele=lst_a.head
-       list1=ele ::list1
-       lst_a=lst_a.tail
-       
-     }
-    println(list1)*/
-    
+  // P6 checking pallindrome  
   val pal_lst= List(1, 2, 3, 2, 1)
   val rev_pal_lst = pal_lst.reverse
   if (pal_lst == rev_pal_lst) {
@@ -31,6 +15,8 @@ object ListOperations {
   } else {
     println("not palindrome")
   }
+  
+  //P7 flattening a nested list
   
   val lst_nest=List(List(1, 1), 2, List(3, List(5, 8)))
   
@@ -44,31 +30,13 @@ object ListOperations {
   val k=func(lst_nest)
   println(k)
   
-  val lst_cons=List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
-  val lstBuff_cons= new  ListBuffer[Char]()
-  /*lst_cons.foreach{x=>
-    if(!lstBuff_cons.contains(x)) {
-      lstBuff_cons+=x
-  } else if(lstBuff_cons.last!=x) {
-    
-      
-      lstBuff_cons+=x
-    
-  }
-    
-    
-  }
-  println(lstBuff_cons)*/
   
-  /*lst_cons.foreach{x=>
-    if(lstBuff_cons.last!=x) {
-      lstBuff_cons+=x
-  }
-    
-  }
-  println(lstBuff_cons)*/
+  
   
   //p09 
+  val lst_cons=List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
+  val lstBuff_cons= new  ListBuffer[Char]()
+  
   var lstBuff_mast= new ListBuffer[ListBuffer[Char]]()
    var lstBuff_eq= new ListBuffer[Char]()
    lstBuff_eq+=lst_cons.head
@@ -162,13 +130,10 @@ println(lst_dec_new)
   val lst_20_rem=lst_20.zipWithIndex.filter(x=>x._2!=1).map(x=>x._1)
   println(lst_20_rem)
   
+  
+  // legato question  to find the frequency of each element in list
   val lst_leg=List(1,2,2,3)
   val map_leg= Map[Int,Int]()
-  /*for(i<-0 to lst_leg.length-2){
-    if(lst_leg(i)==lst_leg(i+1)){
-      lstBuff_leg
-      
-    }*/
   var count=0
   lst_leg.foreach{x=>
     if(map_leg.contains(x)){
@@ -177,8 +142,8 @@ println(lst_dec_new)
       map_leg(x)=count
       count=0
     } else {
-      count+=1
-      map_leg+=(x->count)
+      
+      map_leg+=(x->1)
       count=0
       
     }
