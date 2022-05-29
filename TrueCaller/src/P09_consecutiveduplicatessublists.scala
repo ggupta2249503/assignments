@@ -21,4 +21,6 @@ object P09_consecutiveduplicatessublists {
     lstBuffMast+=lstBuff
     println(lstBuffMast)
 }
+  
+  
 }

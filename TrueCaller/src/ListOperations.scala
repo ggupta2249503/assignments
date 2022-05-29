@@ -151,6 +151,10 @@ println(lst_dec_new)
   }
   println(map_leg)
   
+  //better way to solve legato question
+  val lst_leg_map=lst_leg.groupBy(x=>x).map(x=>(x._1,x._2.length))
+  println(lst_leg_map)
+  
   }
 
   
